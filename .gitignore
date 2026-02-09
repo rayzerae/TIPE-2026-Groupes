@@ -1,0 +1,19 @@
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+_minted*
+*.pdf
+
+# Python & OCaml
+__pycache__/
+*.pyc
+*.cmo
+*.cmi
+*.cmx
+*.o
+.DS_Store

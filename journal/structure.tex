@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{mathpazo} 
+\usepackage[default]{raleway} 
+\renewcommand{\familydefault}{\rmdefault} 
+\usepackage{microtype} 
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+
+\definecolor{royal}{RGB}{0, 50, 90}
+\definecolor{accent}{RGB}{200, 40, 60}
+\definecolor{link}{RGB}{0, 100, 180}
+\definecolor{sidebar}{RGB}{230, 235, 240}
+
+\hypersetup{colorlinks=true, linkcolor=royal, filecolor=royal, urlcolor=link, citecolor=royal}
+
+\newtcolorbox{journalbox}[2][]{
+    enhanced, frame hidden, interior hidden, sharp corners, boxrule=0pt,
+    borderline west={3pt}{0pt}{royal}, coltitle=royal,
+    fonttitle=\bfseries\sffamily\Large,
+    attach boxed title to top left={xshift=0mm, yshift=-3mm},
+    boxed title style={frame hidden, boxrule=0pt, colback=white, interior hidden},
+    left=15pt, right=5pt, top=15pt, bottom=5pt,
+    title={#2}, #1
+}
+
+\newcommand{\buts}[1]{\par\vspace{0.3cm}{\noindent\color{royal}\sffamily\bfseries\faCrosshairs\ Objectifs}\par\vspace{0.1cm}#1}
+\newcommand{\fait}[1]{\par\vspace{0.4cm}{\noindent\color{royal}\sffamily\bfseries\faCheckCircle\ Réalisations}\par\vspace{0.1cm}\begin{itemize}\setlength\itemsep{0.2em}#1\end{itemize}}
+\newcommand{\problemes}[1]{\par\vspace{0.3cm}{\noindent\color{accent}\sffamily\bfseries\faExclamationTriangle\ Difficultés & Solutions}\par\vspace{0.1cm}{\small \itshape #1}}
+\newcommand{\suite}[1]{\par\vspace{0.3cm}{\noindent\color{royal}\sffamily\bfseries\faForward\ Prochaines étapes}\par\vspace{0.1cm}#1}
+\newcommand{\TraceSemaine}[3]{\begin{journalbox}{#1 $\,\cdot\,$ {\normalfont\small\textsf{#2}}} #3 \end{journalbox}\vspace{0.8cm}}
