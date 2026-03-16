@@ -1,6 +1,7 @@
 # TIPE 2026 : Théorie des Groupes & Visualisation 3D
 **Auteur :** Rayhan (MP2I)
 **Thème :** Groupes Kleinéens et ensembles limites (pour l'instant)
+**Problématique :** Comment utiliser les propriétés mathématiques des matrices (comme la trace) pour éviter l'explosion combinatoire et réduire le temps de calcul lors de la génération d'une fractale complexe ?
 
 ## Architecture du dépôt
 * `journal/` : Journal de bord et rapports LaTeX.
