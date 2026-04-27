@@ -1,0 +1,15 @@
+\TraceSemaine{Semaine 4}{16 Mars 2026}{
+    
+    \buts{Trouver une méthode algorithmique pour éviter le calcul infini de toutes les branches de la fractale.}
+    
+    \fait{
+        \item Recherche bibliographique sur les méthodes de rendu des groupes kleinéens (notamment autour du livre \textit{Indra's Pearls}).
+        \item Découverte du lien entre les transformations géométriques et les matrices $2 \times 2$.
+        \item Identification d'un "mur" technique : multiplier des matrices de manière exhaustive crée un arbre de complexité exponentielle $O(k^n)$.
+        \item Recherche d'algorithmes d'élagage (pruning) et découverte de \textbf{l'inégalité de Jørgensen}.
+    }
+    
+    \problemes{Je pensais devoir utiliser des algorithmes compliqués, mais j'ai remarqué que le théorème de Jørgensen repose étonnamment sur un calcul très simple : la \textbf{trace} des matrices.}
+    
+    \suite{Mettre à plat cette inégalité mathématique. Si elle ne dépend vraiment que de la trace, je peux facilement l'intégrer comme condition \texttt{if} pour couper les branches de mon arbre dans mon futur code.}
+}
