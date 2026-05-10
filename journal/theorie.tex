@@ -1,0 +1,46 @@
+% !TeX root = ../main.tex
+
+\newpage
+\section{Fondements Mathématiques : Le Groupe de Möbius}
+\label{sec:theorie_mobius}
+
+\subsection{L'isomorphisme entre Géométrie et Algèbre}
+
+La groupes kléinéens se manifestent dans la dualité entre les transformations géométriques du plan complexe et l'algèbre avec des matrices.
+
+Pour étudier formellement les groupes kleinéens sans se heurter aux singularités (divisions par zéro), il est nécessaire d'étendre notre espace de travail géométrique.
+
+\begin{definition}[Sphère de Riemann]
+On définit le plan complexe achevé, ou \textit{Sphère de Riemann}, noté $\hat{\mathbb{C}}$, comme la compactification d'Alexandrov du plan complexe, c'est-à-dire l'union de $\mathbb{C}$ et d'un unique point à l'infini :
+\[ \hat{\mathbb{C}} = \mathbb{C} \cup \{\infty\} \]
+\end{definition}
+
+\begin{remark}[Prolongement et Bijectivité]
+Ce cadre topologique est crucial. Pour une transformation de Möbius $f(z) = \frac{az+b}{cz+d}$ (avec $c \neq 0$), l'ajout du point $\infty$ permet de lever la valeur interdite du dénominateur en posant naturellement :
+\[ f\left(-\frac{d}{c}\right) = \infty \quad \text{et} \quad f(\infty) = \frac{a}{c} \]
+Grâce à ce prolongement, la transformation $f$ devient une bijection parfaite de $\hat{\mathbb{C}}$ dans lui-même. C'est ce qui nous autorise formellement à parler de "groupe" des transformations de Möbius.
+\end{remark}\begin{remark}[Interprétation géométrique]
+Le terme "compactification d'Alexandrov" signifie topologiquement l'ajout d'un unique point pour rendre un espace compact. Géométriquement, cela s'illustre par la \textbf{projection stéréographique} : on identifie le plan complexe $\mathbb{C}$ à une sphère privée de son pôle Nord. L'ajout du point à l'infini $\infty$ correspond simplement à "reboucher" ce pôle Nord. Ainsi, lorsque $z \to \infty$ dans le plan, son image sur la sphère se rapproche naturellement de ce pôle.
+\end{remark}
+
+\begin{definition}[Transformation de Möbius]
+On appelle transformation de Möbius toute application $f : \hat{\mathbb{C}} \to \hat{\mathbb{C}}$ de la forme :
+\[ f(z) = \frac{az+b}{cz+d} \quad \text{avec} \quad a,b,c,d \in \mathbb{C} \quad \text{et} \quad ad-bc \neq 0 \]
+\end{definition}
+
+\begin{theorem}[Représentation matricielle]
+L'application $\Phi : SL(2, \mathbb{C}) \to \mathcal{M}$ qui à toute matrice $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$ associe la transformation $z \mapsto \frac{az+b}{cz+d}$ est un morphisme de groupes.
+\end{theorem}
+
+\begin{proof}
+Soient $M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ et $M' = \begin{pmatrix} a' & b' \\ c' & d' \end{pmatrix}$ deux matrices de $SL(2, \mathbb{C})$. 
+La composition des transformations associées donne :
+\begin{align*}
+f_M(f_{M'}(z)) &= \frac{a \left( \frac{a'z+b'}{c'z+d'} \right) + b}{c \left( \frac{a'z+b'}{c'z+d'} \right) + d} \\
+&= \frac{(aa'+bc')z + (ab'+bd')}{(ca'+dc')z + (cb'+dd')}
+\end{align*}
+On reconnaît les coefficients de la matrice produit $M \times M'$. Ainsi, composer deux transformations revient à multiplier leurs matrices représentatives.
+\end{proof}
+
+\subsection{Invariants et Trace}
+Dans la suite de ce travail, nous utiliserons la \textbf{trace} de ces matrices, notée $\mathrm{Tr}(M) = a+d$, comme invariant fondamental pour déterminer la nature de la transformation (elliptique, parabolique ou hyperbolique) et pour implémenter nos algorithmes d'élagage.
